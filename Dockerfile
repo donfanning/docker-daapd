@@ -6,9 +6,6 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
-# package version
-ARG DAAPD_VER="24.1"
-
 # install runtime packages
 RUN \
  apk add --no-cache \
@@ -83,7 +80,7 @@ RUN \
 	http://www.antlr3.org/download/antlr-3.4-complete.jar && \
  curl -o \
  /tmp/source/forked.tar.gz -L \
-	"https://github.com/ejurgensen/forked-daapd/archive/${DAAPD_VER}.tar.gz" && \
+	https://github.com/sshambar/forked-daapd/archive/fixconfig.tar.gz && \
  tar xf /tmp/source/forked.tar.gz -C \
 	/tmp/source/forked-daapd --strip-components=1 && \
  export PATH="/tmp/source:$PATH" && \
